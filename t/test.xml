@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<codeBook version="1.2.2" ID="caliberdata" xml-lang="en" xmlns="http://www.icpsr.umich.edu/DDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.icpsr.umich.edu/DDI http://www.icpsr.umich.edu/DDI/Version1-2-2.xsd">
+  <docDscr>
+    <citation>
+      <titlStmt>
+        <titl>
+          CALIBER
+        </titl>
+      </titlStmt>
+      <prodStmt>
+        <producer abbr="SD" affiliation="University College London">
+          Dr. Spiros Denaxas
+        </producer>
+        <prodDate date="2011-10">
+          2011-10
+        </prodDate>
+        <software version="1.2" date="2011-01-07">
+          Metadata Editor
+        </software>
+      </prodStmt>
+      <verStmt>
+        <version>
+          v 1.0
+        </version>
+      </verStmt>
+    </citation>
+  </docDscr>
+  <stdyDscr>
+    <citation>
+      <titlStmt>
+        <titl>
+          CArdiovascular disease research using Linked Bespoke studies and Electronic Records (CALIBER)
+        </titl>
+        <altTitl>
+          CALIBER
+        </altTitl>
+        <IDNo>
+          caliberdata
+        </IDNo>
+      </titlStmt>
+      <rspStmt>
+        <AuthEnty affiliation="University College London">
+          Professor Harry Hemingway
+        </AuthEnty>
+      </rspStmt>
+      <prodStmt>
+        <software version="1.2" date="2011-01-07">
+          Metadata Editor
+        </software>
+        <fundAg>
+          Wellcome Trust
+        </fundAg>
+        <fundAg>
+          NIHR
+        </fundAg>
+      </prodStmt>
+      <distStmt>
+        <contact affiliation="University College London" email="s.denaxas@ucl.ac.uk">
+          Dr. Spiros Denaxas
+        </contact>
+      </distStmt>
+    </citation>
+    <stdyInfo>
+      <sumDscr>
+        <nation abbr="UK">
+          United Kingdom
+        </nation>
+      </sumDscr>
+    </stdyInfo>
+    <method>
+      <dataColl>
+        <collMode>
+          Face-to-face [f2f]
+        </collMode>
+        <sources/>
+      </dataColl>
+    </method>
+  </stdyDscr>
+  <fileDscr ID="F2" URI="caliberdata.Nesstar?Index=0&amp;Name=2_Demographics">
+    <fileTxt>
+      <fileName>
+        2_Demographics.NSDstat
+      </fileName>
+      <dimensns>
+        <caseQnty>
+          0
+        </caseQnty>
+        <varQnty>
+          4
+        </varQnty>
+      </dimensns>
+      <fileType>
+        Nesstar 200801
+      </fileType>
+    </fileTxt>
+  </fileDscr>
+  <fileDscr ID="F3" URI="caliberdata.Nesstar?Index=1&amp;Name=5_Cancer">
+    <fileTxt>
+      <fileName>
+        5_Cancer.NSDstat
+      </fileName>
+      <fileCont>
+        Diseases related to cancer.
+      </fileCont>
+      <dimensns>
+        <caseQnty>
+          0
+        </caseQnty>
+        <varQnty>
+          0
+        </varQnty>
+      </dimensns>
+      <fileType>
+        Nesstar 200801
+      </fileType>
+    </fileTxt>
+  </fileDscr>
+  <dataDscr>
+    <var ID="V6" name="age" files="F2" dcml="0" intrvl="discrete">
+      <location RecSegNo="1"/>
+      <labl>
+        Age
+      </labl>
+      <respUnit>
+        GPRD patient file
+      </respUnit>
+      <valrng>
+        <range UNITS="REAL" min="1857" max="2010"/>
+      </valrng>
+      <txt>
+        Year of birth as defined in the GPRD patient file.
+      </txt>
+      <varFormat type="numeric" schema="other"/>
+      <notes>
+        Agreed: 02/03/2011
+      </notes>
+    </var>
+    <var ID="V8" name="sex" files="F2" intrvl="discrete">
+      <location width="1" RecSegNo="1"/>
+      <labl>
+        Sex
+      </labl>
+      <txt>
+        Sec of patient as defined in the GPRD patient file.
+      </txt>
+      <catgry>
+        <catValu>
+          1
+        </catValu>
+        <labl>
+          male
+        </labl>
+      </catgry>
+      <catgry>
+        <catValu>
+          2
+        </catValu>
+        <labl>
+          female
+        </labl>
+      </catgry>
+      <varFormat type="character" schema="other"/>
+      <notes>
+        Agreed: 02/03/2011
+      </notes>
+    </var>
+    <var ID="V9" name="depriv_minap" files="F2" dcml="0" intrvl="discrete">
+      <location RecSegNo="1"/>
+      <labl>
+        Deprivation score in MINAP
+      </labl>
+      <respUnit>
+        MINAP
+      </respUnit>
+      <sumStat type="vald">
+        0
+      </sumStat>
+      <sumStat type="invd">
+        0
+      </sumStat>
+      <txt>
+        Index of multuple deprivation score based on patient's postcode provided by MINAP.
+      </txt>
+      <varFormat type="numeric" schema="other"/>
+      <notes>
+        Agreed: 02/03/2011
+      </notes>
+    </var>
+    <var ID="V11" name="marital_st" files="F2" intrvl="discrete">
+      <location width="1" RecSegNo="1"/>
+      <labl>
+        Marital status
+      </labl>
+      <respUnit>
+        <![CDATA[GPRD patient file
+GPRD clinical file]]>
+      </respUnit>
+      <txt>
+        Marital status of patient as recorded in the GPRD.
+      </txt>
+      <catgry>
+        <catValu>
+          0
+        </catValu>
+        <labl>
+          Not recorded
+        </labl>
+      </catgry>
+      <catgry>
+        <catValu>
+          1
+        </catValu>
+        <labl>
+          Single
+        </labl>
+      </catgry>
+      <catgry>
+        <catValu>
+          2
+        </catValu>
+        <labl>
+          Possibly married
+        </labl>
+      </catgry>
+      <catgry>
+        <catValu>
+          3
+        </catValu>
+        <labl>
+          Married or co-habiting
+        </labl>
+      </catgry>
+      <catgry>
+        <catValu>
+          4
+        </catValu>
+        <labl>
+          Separated or divorced
+        </labl>
+      </catgry>
+      <catgry>
+        <catValu>
+          5
+        </catValu>
+        <labl>
+          Widowed
+        </labl>
+      </catgry>
+      <catgry>
+        <catValu>
+          6
+        </catValu>
+        <labl>
+          Unknown or not reported
+        </labl>
+      </catgry>
+      <varFormat type="character" schema="other"/>
+      <notes>
+        Agreed: 05/05/2011
+      </notes>
+    </var>
+  </dataDscr>
+</codeBook>

@@ -4,8 +4,10 @@ use warnings;
 package Data::DDI;
 
 use XML::Simple;
+
 use Data::DDI::DocumentDescription;
 use Data::DDI::File;
+use Data::DDI::Variable;
    
 # ABSTRACT: Parse DDI2 documents.
 
@@ -116,5 +118,30 @@ sub get_files {
 
     return $ra_out;
 }
+
+=head2 get_variables
+
+    my $ra_files = $DD->get_variables();
+    
+Returns a reference to an array of Data::DDI::Variable objects.
+
+=cut
+
+sub get_variables {
+    my $self = shift;
+    my $rh_variables = $self->{data}{codeBook}{dataDscr}{var};
+    
+    my $ra_out = [ ];
+    
+    foreach my $var_id ( keys %$rh_variables ) {
+        my $rh_var_data = $rh_variables->{ $var_id };
+        $rh_var_data->{id} = $var_id;
+        push( @$ra_out, Data::DDI::Variable->new( $rh_var_data ) );
+    }
+    
+    return $ra_out;
+}
+
+
 
 1;

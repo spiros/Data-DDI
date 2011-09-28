@@ -2,36 +2,21 @@ use strict;
 use warnings;
 
 package Data::DDI::File;
-
 # ABSTRACT: File description class
 
-sub new {
-    my $class = shift;
-    my $rh    = shift;
-    return bless $rh, $class;
-}
+use Moose;
+use MooseX::Aliases;
+
+has 'fileTxt' => ( is => 'ro', alias => 'file_description' );
+has 'URI'     => ( is => 'ro', alias => 'uri'              );
+has 'id'      => ( is => 'ro', alias => 'file_id'          );
 
 =head2 Accessors
 
     $Object->file_description();
     $Object->uri();
-    $Object->id();
+    $Object->file_id();
 
 =cut
-
-sub file_description {
-    my $self = shift;
-    return $self->{fileTxt};
-}
-
-sub uri {
-    my $self = shift;
-    return $self->{URI};
-}
-
-sub id {
-    my $self = shift;
-    return $self->{id};
-}
 
 1;

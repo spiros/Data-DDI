@@ -31,6 +31,24 @@ foreach my $Variable ( @$ra_variables ) {
     ok( ! $Variable->is_numeric  );
     is( $Variable->source, "GPRD patient file\nGPRD clinical file");
     ok( $Variable->universe );
+    
+    my $rh_categories = $Variable->get_categories;
+    
+    my $rh_categories_expected = {
+              '6' => 'Unknown or not reported',
+              '4' => 'Separated or divorced',
+              '1' => 'Single',
+              '3' => 'Married or co-habiting',
+              '0' => 'Not recorded',
+              '2' => 'Possibly married',
+              '5' => 'Widowed'
+            };
+    
+    cmp_deeply(
+        $rh_categories_expected,
+        $rh_categories,
+        'get_categories'
+    );    
 
 }
 

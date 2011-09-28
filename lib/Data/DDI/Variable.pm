@@ -27,6 +27,16 @@ use MooseX::Aliases;
     $Object->source();
     $Object->universe();
 
+    $Object->get_categories();
+
+Returns a reference to a hash where the keys are the category values
+and the values are the category labels. Will return undef if the variable 
+is numeric or no categories were supplied.
+
+    $Object->is_numeric();
+    
+Returns true if the variable is numeric and undef in all other cases.
+
 =cut
 
 has 'labl'      => ( is => 'ro', 'isa' => 'Str', alias => 'label'     );
@@ -50,6 +60,27 @@ sub raw {
     return $self;
 }
 
+sub get_categories {
+    my $self   = shift;
+    my $ra_raw = $self->categories;
+    
+    if ( $self->is_numeric ) {
+        return undef;
+    }
+    
+    my $rh_out = { };
+    
+    foreach my $rh ( @$ra_raw ) {
+        
+        my $category = $rh->{catValu};
+        my $label    = $rh->{labl};
+        
+        $rh_out->{ $category } = $label;
+        
+    }
+
+    return $rh_out;
+}
 
 
 sub is_numeric {

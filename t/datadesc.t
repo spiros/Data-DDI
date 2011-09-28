@@ -17,22 +17,22 @@ my $ra_variables =
 
 foreach my $Variable ( @$ra_variables ) {
     
-    my $id = $Variable->id;
+    my $name = $Variable->name;
     
-    ok( $Variable->raw, 'raw'               );
+    ok( $name );
     
-    ok( $Variable->location, "$id location"     ); 
-    ok( $Variable->files, 'files'           );
-    ok( $Variable->name, 'name'             );
-    ok( $Variable->label, 'label'           );
-    ok( $Variable->definition, 'definition' );
-    ok( $Variable->id, 'id'                 );
+    next unless ( $name eq 'marital_st' );
     
+    is( $Variable->name, 'marital_st'      );
+    is( $Variable->files, 'F2'             );
+    is( $Variable->label, 'Marital status' );
+    is( $Variable->definition, 'Marital status of patient as recorded in the GPRD.' );
+    is( $Variable->id, 'V11'     );
+    ok( ! $Variable->is_numeric  );
+    is( $Variable->source, "GPRD patient file\nGPRD clinical file");
+    ok( $Variable->universe );
+
 }
-
-
-
-
 
 done_testing();
 

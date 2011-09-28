@@ -195,6 +195,9 @@
         <![CDATA[GPRD patient file
 GPRD clinical file]]>
       </respUnit>
+      <universe clusion="I">
+              Base
+      </universe>
       <txt>
         Marital status of patient as recorded in the GPRD.
       </txt>

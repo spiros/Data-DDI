@@ -5,6 +5,8 @@ package Data::DDI::DocumentDescription;
 
 # ABSTRACT: Document description class
 
+# TODO: Moose it.
+
 =head2 Accessors
 
    $Object->document_title;

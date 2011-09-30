@@ -24,10 +24,10 @@ foreach my $Variable ( @$ra_variables ) {
     next unless ( $name eq 'marital_st' );
     
     is( $Variable->name, 'marital_st'      );
-    is( $Variable->files, 'F2'             );
+    ok( $Variable->files =~ m/F\d{1,}/             );
     is( $Variable->label, 'Marital status' );
     is( $Variable->definition, 'Marital status of patient as recorded in the GPRD.' );
-    is( $Variable->id, 'V11'     );
+    ok( $Variable->id =~ /V\d{1,}/     );
     ok( ! $Variable->is_numeric  );
     is( $Variable->source, "GPRD patient file\nGPRD clinical file");
     ok( $Variable->universe );

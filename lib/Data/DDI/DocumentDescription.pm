@@ -2,7 +2,6 @@ use strict;
 use warnings;
 
 package Data::DDI::DocumentDescription;
-
 # ABSTRACT: Document description class
 
 # TODO: Moose it.
@@ -26,32 +25,32 @@ sub new {
 
 sub document_title {
    my $self = shift;
-   return $self->{citation}->{titlStmt}->{titl};
+   return $self->{titlStmt}->{titl};
 }
 
 sub document_id {
    my $self = shift;
-   return $self->{citation}->{titlStmt}->{IDNo};
+   return $self->{titlStmt}->{IDNo};
 }
 
 sub document_production_date {
    my $self = shift;
-   return $self->{citation}->{prodStmt}->{prodDate}->{date};
+   return $self->{prodStmt}->{prodDate}->{date};
 }
 
 sub document_sw {
    my $self = shift;
-   return $self->{citation}->{prodStmt}->{software};
+   return $self->{prodStmt}->{software};
 }
 
 sub document_producer {
    my $self = shift;
-   return $self->{citation}->{prodStmt}->{producer};
+   return $self->{prodStmt}->{producer};
 }
 
 sub document_version {
    my $self = shift;
-   return $self->{citation}->{verStmt}->{version};
+   return $self->{verStmt}->{version};
 }
 
 1;

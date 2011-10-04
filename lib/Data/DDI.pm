@@ -89,8 +89,8 @@ Returns a document description object and I<undef> on error.
 sub get_document_description {
    my $self = shift;
    
-   if ( exists $self->{data}{codeBook}{stdyDscr} ) {
-      return Data::DDI::DocumentDescription->new( $self->{data}{codeBook}{docDscr} )
+   if ( exists $self->{data}{codeBook}{stdyDscr}{citation} ) {
+      return Data::DDI::DocumentDescription->new( $self->{data}{codeBook}{docDscr}{citation} )
    } else{
       return undef;
    } 

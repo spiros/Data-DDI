@@ -53,6 +53,7 @@ has 'location'  => ( is => 'ro',  );
 has 'notes'     => ( is => 'ro',  );
 has 'catgry'    => ( is => 'ro', alias => 'categories' );
 has 'varFormat' => ( is => 'ro', alias => 'format'     );  
+has 'concept'   => ( is => 'ro' );
 has 'universe'  => ( is => 'ro' );
 
 sub raw {
